@@ -1,0 +1,65 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch API Server (Production)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/artifacts/api-server/dist/index.js",
+      "preLaunchTask": "pnpm: build",
+      "outFiles": [
+        "${workspaceFolder}/artifacts/api-server/dist/**/*.js"
+      ],
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "restart": true,
+      "runtimeExecutable": "node",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Dev Mode (pnpm dev)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "${workspaceFolder}/artifacts/api-server",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Run Tests (pnpm test)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["test"],
+      "cwd": "${workspaceFolder}/artifacts/api-server",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Run Build (pnpm build)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "build"],
+      "cwd": "${workspaceFolder}/artifacts/api-server",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
